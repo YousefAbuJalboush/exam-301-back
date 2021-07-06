@@ -15,7 +15,9 @@ const PORT = process.env.PORT;
 
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/cocktail', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://localhost:27017/cocktail', { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect( process.env.ATLAS, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const {
     testAPI, getCocktail, addFavCocktail, getAllFavCocktail , deleteFavCocktail , updateFavCocktail
